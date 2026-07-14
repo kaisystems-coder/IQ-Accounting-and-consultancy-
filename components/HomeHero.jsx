@@ -1,0 +1,220 @@
+"use client";
+
+import { motion, useScroll, useTransform } from "framer-motion";
+import HeroBackdrop from "@/components/HeroBackdrop";
+import MagneticButton from "@/components/MagneticButton";
+import { CursorMark } from "@/components/ui";
+import { EASE, lineChild, lineParent, usePrefersReducedMotion } from "@/lib/motion";
+
+const HEADLINE = [
+  ["Books in order.", false],
+  ["Taxes handled.", false],
+  ["Boxes of bills — gone.", true],
+];
+
+export default function HomeHero() {
+  const reduced = usePrefersReducedMotion();
+
+  return (
+    <section className="relative flex min-h-[100dvh] items-center overflow-hidden bg-brand-deep pt-28 text-white">
+      <HeroBackdrop />
+
+      <div className="relative z-10 mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 px-5 pb-28 sm:px-8 sm:pb-20 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8 lg:pb-16">
+        {/* Foreground content */}
+        <div>
+          <motion.div
+            initial={reduced ? false : { opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: EASE }}
+            className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-[0.8rem] font-medium text-white/75 backdrop-blur-sm"
+          >
+            <CursorMark size={15} className="text-brand-cyan-bright" />
+            We&apos;ve been expecting you.
+          </motion.div>
+
+          <h1 className="font-display text-[2.6rem] font-semibold leading-[1.02] tracking-tightest [text-wrap:balance] sm:text-6xl lg:text-[4.15rem]">
+            <motion.span
+              variants={reduced ? undefined : lineParent}
+              initial={reduced ? false : "hidden"}
+              animate={reduced ? false : "show"}
+              custom={0.2}
+              className="block"
+            >
+              {HEADLINE.map(([line, accent], i) => (
+                <span key={i} className="block overflow-hidden pb-[0.08em]">
+                  <motion.span
+                    variants={reduced ? undefined : lineChild}
+                    className={`block ${
+                      accent
+                        ? "italic text-brand-cyan-bright"
+                        : "text-white"
+                    }`}
+                  >
+                    {line}
+                  </motion.span>
+                </span>
+              ))}
+            </motion.span>
+          </h1>
+
+          <motion.p
+            initial={reduced ? false : { opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: EASE, delay: reduced ? 0 : 1.05 }}
+            className="mt-7 max-w-xl text-[1.05rem] leading-relaxed text-white/70"
+          >
+            Every small and medium business hits the same wall — paper
+            everywhere, bills in boxes, and no clear read on what you owe. IQ
+            Accounting and Consulting clears the pile and gives Trinidad &amp;
+            Tobago owners numbers they can actually run on.
+          </motion.p>
+
+          <motion.div
+            initial={reduced ? false : { opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: EASE, delay: reduced ? 0 : 1.2 }}
+            className="mt-9 flex flex-wrap items-center gap-3"
+          >
+            <MagneticButton href="/contact" variant="light">
+              Book a consult
+            </MagneticButton>
+            <MagneticButton href="/services" variant="ghost">
+              See what we do
+            </MagneticButton>
+          </motion.div>
+
+          <motion.ul
+            initial={reduced ? false : { opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, ease: EASE, delay: reduced ? 0 : 1.4 }}
+            className="mt-10 flex flex-wrap gap-x-7 gap-y-2 text-[0.85rem] text-white/55"
+          >
+            {["VAT & Corporation Tax", "Payroll, NIS & PAYE", "Certified statements for bankers"].map(
+              (t) => (
+                <li key={t} className="flex items-center gap-2">
+                  <span className="h-1 w-1 rounded-full bg-brand-cyan-bright" />
+                  {t}
+                </li>
+              )
+            )}
+          </motion.ul>
+        </div>
+
+        {/* Floating precision panel (mid/foreground visual) */}
+        <PrecisionPanel />
+      </div>
+
+      <ScrollCue />
+    </section>
+  );
+}
+
+function PrecisionPanel() {
+  const reduced = usePrefersReducedMotion();
+  const rows = [
+    { label: "VAT payable", value: "$14,280.00", tone: "text-white" },
+    { label: "PAYE remitted", value: "$8,940.50", tone: "text-white" },
+    { label: "NIS contributions", value: "$3,112.00", tone: "text-white" },
+  ];
+
+  return (
+    <motion.div
+      initial={reduced ? false : { opacity: 0, y: 40, rotate: -1.5 }}
+      animate={{ opacity: 1, y: 0, rotate: 0 }}
+      transition={{ duration: 0.9, ease: EASE, delay: reduced ? 0 : 0.5 }}
+      className="relative mx-auto hidden w-full max-w-sm lg:block"
+    >
+      {/* glow */}
+      <div className="absolute -inset-4 -z-10 rounded-[2rem] bg-brand-cyan/20 blur-2xl" />
+
+      <div className="rounded-[1.75rem] border border-white/12 bg-white/[0.06] p-6 shadow-float backdrop-blur-xl">
+        <div className="flex items-center justify-between">
+          <div>
+            <p className="text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-brand-cyan-bright">
+              Statement · Q3
+            </p>
+            <p className="mt-1 font-display text-lg text-white">Clean books</p>
+          </div>
+          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-cyan/15 text-brand-cyan-bright">
+            <CursorMark size={17} />
+          </span>
+        </div>
+
+        <div className="mt-6 space-y-1">
+          {rows.map((r, i) => (
+            <motion.div
+              key={r.label}
+              initial={reduced ? false : { opacity: 0, x: 14 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, ease: EASE, delay: reduced ? 0 : 0.9 + i * 0.12 }}
+              className="flex items-center justify-between border-b border-white/8 py-3 last:border-0"
+            >
+              <span className="text-[0.9rem] text-white/60">{r.label}</span>
+              <span className={`tabular text-[0.95rem] font-semibold ${r.tone}`}>
+                {r.value}
+              </span>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="mt-5 flex items-center justify-between rounded-2xl bg-gradient-to-r from-brand-cyan/20 to-brand-blue/20 px-4 py-3">
+          <span className="text-[0.85rem] font-medium text-white/80">
+            Filed &amp; reconciled
+          </span>
+          <span className="flex items-center gap-1.5 text-[0.85rem] font-semibold text-brand-cyan-bright">
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
+              <path d="m3.5 8.5 3 3 6-7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            On time
+          </span>
+        </div>
+      </div>
+
+      {/* small floating chip */}
+      <motion.div
+        initial={reduced ? false : { opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, ease: EASE, delay: reduced ? 0 : 1.35 }}
+        className={`absolute -bottom-10 left-2 rounded-2xl border border-white/12 bg-brand-deep/95 px-4 py-3 shadow-float backdrop-blur-xl ${
+          reduced ? "" : "animate-bob"
+        }`}
+      >
+        <p className="text-[0.7rem] uppercase tracking-[0.14em] text-white/45">
+          Owed to BIR
+        </p>
+        <p className="tabular font-display text-xl text-white">$0 late fees</p>
+      </motion.div>
+    </motion.div>
+  );
+}
+
+function ScrollCue() {
+  const reduced = usePrefersReducedMotion();
+  // Fade + drift out over the first ~18% of a viewport of scrolling.
+  const { scrollY } = useScroll();
+  const opacity = useTransform(scrollY, [0, 140], [1, 0]);
+  const y = useTransform(scrollY, [0, 140], [0, 16]);
+
+  return (
+    <motion.a
+      href="#services"
+      aria-label="Scroll to services"
+      initial={reduced ? false : { opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8, delay: reduced ? 0 : 1.6 }}
+      style={reduced ? undefined : { opacity, y }}
+      className="pointer-events-none absolute bottom-5 left-1/2 z-[15] hidden -translate-x-1/2 flex-col items-center gap-2 text-white/50 sm:flex"
+    >
+      <span className="text-[0.68rem] font-medium uppercase tracking-[0.2em]">
+        Scroll
+      </span>
+      <span className="flex h-9 w-5 justify-center rounded-full border border-white/25 pt-1.5">
+        <motion.span
+          animate={reduced ? {} : { y: [0, 8, 0], opacity: [1, 0.3, 1] }}
+          transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+          className="h-1.5 w-1 rounded-full bg-brand-cyan-bright"
+        />
+      </span>
+    </motion.a>
+  );
+}
