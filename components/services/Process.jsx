@@ -7,23 +7,23 @@ import { StaggerGroup, StaggerItem } from "@/components/StaggerGroup";
 const STEPS = [
   {
     n: "01",
-    title: "Bring the box",
-    body: "Hand us whatever you have — receipts, bank statements, the shoebox, the plastic bags. No judgment, no need to sort it first.",
+    title: "We assess your business",
+    body: "We sit with you to understand how the business runs, what it needs to record, and which taxes and deadlines apply to you.",
   },
   {
     n: "02",
-    title: "We set the system",
-    body: "We build your computerized accounting system, migrate your data and reconcile everything back to the cent.",
+    title: "We build the system",
+    body: "We set up your accounting system and write the policies and procedures manuals — so there's a clear, documented way to do every task.",
   },
   {
     n: "03",
-    title: "We file & keep you compliant",
-    body: "VAT, PAYE, NIS, Corporation Tax — every return prepared, filed and paid ahead of its deadline, tracked on a calendar we run.",
+    title: "We train your staff",
+    body: "Hands-on training on your own system and forms, until your team can post, reconcile and report with confidence.",
   },
   {
     n: "04",
-    title: "You get the full picture",
-    body: "Clean monthly numbers, certified statements when you need them, and a partner who explains what it all means.",
+    title: "You run it in-house",
+    body: "Your staff keep the books, and you keep the knowledge. We're on hand for questions — but the accounting is yours.",
   },
 ];
 
@@ -34,7 +34,7 @@ export default function Process() {
         <Reveal className="max-w-2xl">
           <Kicker>How it works</Kicker>
           <h2 className="mt-4 font-display text-[2rem] font-semibold leading-[1.1] tracking-tightest [text-wrap:balance] sm:text-[2.6rem]">
-            From chaos to clean books in{" "}
+            From setup to self-sufficient in{" "}
             <span className="italic text-brand-blue">four steps.</span>
           </h2>
         </Reveal>

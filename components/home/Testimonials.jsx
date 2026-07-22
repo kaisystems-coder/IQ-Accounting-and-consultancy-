@@ -20,8 +20,8 @@ export default function Testimonials() {
             <Kicker>In their words</Kicker>
           </div>
           <h2 className="mx-auto mt-4 max-w-2xl font-display text-[2.1rem] font-semibold leading-[1.08] tracking-tightest [text-wrap:balance] sm:text-[2.75rem]">
-            Owners who handed us the box —{" "}
-            <span className="italic text-brand-blue">and never looked back.</span>
+            People we trained —{" "}
+            <span className="italic text-brand-blue">now running it themselves.</span>
           </h2>
         </Reveal>
 

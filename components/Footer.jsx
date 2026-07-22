@@ -13,10 +13,11 @@ const nav = [
 ];
 
 const services = [
-  "Bookkeeping & Accounting",
-  "Corporate & Personal Tax",
-  "Audit & Assurance",
-  "Business Advisory",
+  "Accounting System Setup",
+  "Policies & Procedures Manuals",
+  "Staff Training",
+  "E-Courses & Workshops",
+  "Private 1-on-1 Training",
 ];
 
 export default function Footer() {
@@ -41,8 +42,9 @@ export default function Footer() {
               className="h-11 w-auto"
             />
             <p className="mt-5 max-w-xs text-[0.95rem] leading-relaxed text-white/60">
-              Accounting, tax and advisory for Trinidad &amp; Tobago businesses
-              that want their numbers to work as hard as they do.
+              Accounting system setup, staff training and professional
+              e-courses for Trinidad &amp; Tobago — so you run your own numbers
+              with confidence.
             </p>
           </div>
 

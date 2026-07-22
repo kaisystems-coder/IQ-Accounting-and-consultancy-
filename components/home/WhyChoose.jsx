@@ -13,21 +13,21 @@ export default function WhyChoose() {
         <Reveal className="lg:sticky lg:top-32">
           <Kicker>Why IQ</Kicker>
           <h2 className="mt-4 font-display text-[2.1rem] font-semibold leading-[1.08] tracking-tightest [text-wrap:balance] sm:text-[2.75rem]">
-            The accountant who actually{" "}
-            <span className="italic text-brand-blue">picks up the phone.</span>
+            The firm that teaches you to{" "}
+            <span className="italic text-brand-blue">not need one.</span>
           </h2>
           <p className="mt-5 max-w-md text-[1.02rem] leading-relaxed text-brand-ink/65">
-            Plenty of firms will file your returns. Fewer will explain them, warn
-            you before a deadline, and treat your compliance calendar as their
-            job. That difference is the whole point of IQ.
+            Plenty of firms will keep your books for you, forever. IQ does the
+            opposite — we set up the system, write the manuals, and train your
+            people until the accounting runs without us. That's the whole point.
           </p>
           <div className="mt-8 inline-flex items-center gap-3 rounded-2xl border border-brand-line bg-white px-5 py-4 shadow-card">
             <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-deep text-brand-cyan-bright">
               <CursorMark size={18} />
             </span>
             <p className="text-[0.92rem] font-medium text-brand-deep">
-              High Impact solves the pile —{" "}
-              <span className="text-brand-ink/55">so you can run the business.</span>
+              IQ builds the capability —{" "}
+              <span className="text-brand-ink/55">so your team runs the numbers.</span>
             </p>
           </div>
         </Reveal>

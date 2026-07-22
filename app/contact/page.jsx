@@ -4,7 +4,7 @@ import ContactBody from "@/components/contact/ContactBody";
 export const metadata = {
   title: "Contact | IQ Accounting and Consulting Limited",
   description:
-    "Book a free consult with IQ Accounting and Consulting. Call, WhatsApp or send a message — we'll help you clear the pile.",
+    "Get in touch with IQ Accounting and Consulting. Call, WhatsApp or send a message about a system setup, staff training, a course, a workshop or private one-on-one training.",
 };
 
 export default function ContactPage() {
@@ -12,9 +12,9 @@ export default function ContactPage() {
     <>
       <PageHero
         kicker="Get in touch"
-        title="Bring the box."
-        accent="Let's clear it together."
-        intro="Whatever state your books are in, one conversation gets IQ on your side. Reach out and we'll take it from there."
+        title="Let's get you set up"
+        accent="to run your own numbers."
+        intro="Setting up a new business, training your staff, or developing your own skills — tell us where you are and we'll point you to the right setup, course or one-on-one session."
       />
       <ContactBody />
     </>

@@ -13,10 +13,10 @@ export default function CoursesPage() {
   return (
     <>
       <PageHero
-        kicker="Short courses"
+        kicker="E-courses & workshops"
         title="Learn the essentials,"
         accent="taught the way you'll actually use them."
-        intro="Short, practical e-courses that teach your team the day-to-day skills — PAYE, NIS, TD4s, VAT, Peachtree and more — without the jargon or the semester-long commitment."
+        intro="Practical accounting & taxation e-courses and workshops for professionals across T&T — PAYE, NIS, TD4s, VAT, Peachtree and more. Take them online, in a workshop, or one-on-one, without the jargon or the semester-long commitment."
       />
       <CoursesGrid />
       <CourseReview />

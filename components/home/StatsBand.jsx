@@ -15,11 +15,11 @@ export default function StatsBand() {
         <Reveal className="max-w-2xl">
           <Kicker tone="light">By the numbers</Kicker>
           <h2 className="mt-4 font-display text-[2.1rem] font-semibold leading-[1.08] tracking-tightest [text-wrap:balance] sm:text-[2.75rem]">
-            Trusted with the books that keep{" "}
+            Teaching{" "}
             <span className="italic text-brand-cyan-bright">
-              T&amp;T businesses
+              T&amp;T's finance people
             </span>{" "}
-            running.
+            to stand on their own.
           </h2>
         </Reveal>
 

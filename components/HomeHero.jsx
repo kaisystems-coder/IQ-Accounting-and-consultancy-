@@ -3,13 +3,14 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import HeroBackdrop from "@/components/HeroBackdrop";
 import MagneticButton from "@/components/MagneticButton";
+import HeroContactForm from "@/components/home/HeroContactForm";
 import { CursorMark } from "@/components/ui";
 import { EASE, lineChild, lineParent, usePrefersReducedMotion } from "@/lib/motion";
 
 const HEADLINE = [
-  ["Books in order.", false],
-  ["Taxes handled.", false],
-  ["Boxes of bills — gone.", true],
+  ["Set up the system.", false],
+  ["Train your team.", false],
+  ["Own your numbers.", true],
 ];
 
 export default function HomeHero() {
@@ -29,7 +30,7 @@ export default function HomeHero() {
             className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-[0.8rem] font-medium text-white/75 backdrop-blur-sm"
           >
             <CursorMark size={15} className="text-brand-cyan-bright" />
-            We&apos;ve been expecting you.
+            Accounting you learn to run yourself.
           </motion.div>
 
           <h1 className="font-display text-[2.6rem] font-semibold leading-[1.02] tracking-tightest [text-wrap:balance] sm:text-6xl lg:text-[4.15rem]">
@@ -63,10 +64,10 @@ export default function HomeHero() {
             transition={{ duration: 0.7, ease: EASE, delay: reduced ? 0 : 1.05 }}
             className="mt-7 max-w-xl text-[1.05rem] leading-relaxed text-white/70"
           >
-            Every small and medium business hits the same wall — paper
-            everywhere, bills in boxes, and no clear read on what you owe. IQ
-            Accounting and Consulting clears the pile and gives Trinidad &amp;
-            Tobago owners numbers they can actually run on.
+            IQ does two things well: we set up the accounting system for your
+            new business — manuals and all — and train your staff to run it, and
+            we teach accounting &amp; taxation e-courses and workshops for
+            professionals across Trinidad &amp; Tobago.
           </motion.p>
 
           <motion.div
@@ -89,7 +90,7 @@ export default function HomeHero() {
             transition={{ duration: 0.8, ease: EASE, delay: reduced ? 0 : 1.4 }}
             className="mt-10 flex flex-wrap gap-x-7 gap-y-2 text-[0.85rem] text-white/55"
           >
-            {["VAT & Corporation Tax", "Payroll, NIS & PAYE", "Certified statements for bankers"].map(
+            {["System setup & manuals", "Staff training in-house", "Public e-courses & workshops"].map(
               (t) => (
                 <li key={t} className="flex items-center gap-2">
                   <span className="h-1 w-1 rounded-full bg-brand-cyan-bright" />
@@ -100,91 +101,14 @@ export default function HomeHero() {
           </motion.ul>
         </div>
 
-        {/* Floating precision panel (mid/foreground visual) */}
-        <PrecisionPanel />
+        {/* Secondary lead form (replaces the decorative panel) */}
+        <div className="hidden lg:block">
+          <HeroContactForm />
+        </div>
       </div>
 
       <ScrollCue />
     </section>
-  );
-}
-
-function PrecisionPanel() {
-  const reduced = usePrefersReducedMotion();
-  const rows = [
-    { label: "VAT payable", value: "$14,280.00", tone: "text-white" },
-    { label: "PAYE remitted", value: "$8,940.50", tone: "text-white" },
-    { label: "NIS contributions", value: "$3,112.00", tone: "text-white" },
-  ];
-
-  return (
-    <motion.div
-      initial={reduced ? false : { opacity: 0, y: 40, rotate: -1.5 }}
-      animate={{ opacity: 1, y: 0, rotate: 0 }}
-      transition={{ duration: 0.9, ease: EASE, delay: reduced ? 0 : 0.5 }}
-      className="relative mx-auto hidden w-full max-w-sm lg:block"
-    >
-      {/* glow */}
-      <div className="absolute -inset-4 -z-10 rounded-[2rem] bg-brand-cyan/20 blur-2xl" />
-
-      <div className="rounded-[1.75rem] border border-white/12 bg-white/[0.06] p-6 shadow-float backdrop-blur-xl">
-        <div className="flex items-center justify-between">
-          <div>
-            <p className="text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-brand-cyan-bright">
-              Statement · Q3
-            </p>
-            <p className="mt-1 font-display text-lg text-white">Clean books</p>
-          </div>
-          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-cyan/15 text-brand-cyan-bright">
-            <CursorMark size={17} />
-          </span>
-        </div>
-
-        <div className="mt-6 space-y-1">
-          {rows.map((r, i) => (
-            <motion.div
-              key={r.label}
-              initial={reduced ? false : { opacity: 0, x: 14 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, ease: EASE, delay: reduced ? 0 : 0.9 + i * 0.12 }}
-              className="flex items-center justify-between border-b border-white/8 py-3 last:border-0"
-            >
-              <span className="text-[0.9rem] text-white/60">{r.label}</span>
-              <span className={`tabular text-[0.95rem] font-semibold ${r.tone}`}>
-                {r.value}
-              </span>
-            </motion.div>
-          ))}
-        </div>
-
-        <div className="mt-5 flex items-center justify-between rounded-2xl bg-gradient-to-r from-brand-cyan/20 to-brand-blue/20 px-4 py-3">
-          <span className="text-[0.85rem] font-medium text-white/80">
-            Filed &amp; reconciled
-          </span>
-          <span className="flex items-center gap-1.5 text-[0.85rem] font-semibold text-brand-cyan-bright">
-            <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
-              <path d="m3.5 8.5 3 3 6-7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            On time
-          </span>
-        </div>
-      </div>
-
-      {/* small floating chip */}
-      <motion.div
-        initial={reduced ? false : { opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6, ease: EASE, delay: reduced ? 0 : 1.35 }}
-        className={`absolute -bottom-10 left-2 rounded-2xl border border-white/12 bg-brand-deep/95 px-4 py-3 shadow-float backdrop-blur-xl ${
-          reduced ? "" : "animate-bob"
-        }`}
-      >
-        <p className="text-[0.7rem] uppercase tracking-[0.14em] text-white/45">
-          Owed to BIR
-        </p>
-        <p className="tabular font-display text-xl text-white">$0 late fees</p>
-      </motion.div>
-    </motion.div>
   );
 }
 

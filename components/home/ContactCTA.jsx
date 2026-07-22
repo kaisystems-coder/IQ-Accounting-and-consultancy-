@@ -15,12 +15,12 @@ export default function ContactCTA() {
             <CursorMark size={26} />
           </span>
           <h2 className="mx-auto max-w-2xl font-display text-[2.3rem] font-semibold leading-[1.05] tracking-tightest [text-wrap:balance] sm:text-[3.25rem]">
-            Ready to clear the pile?
+            Ready to take control of the numbers?
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-[1.05rem] leading-relaxed text-white/65">
-            Bring the box, the bags, the shoebox of receipts — whatever state
-            your books are in. One conversation is all it takes to get IQ on your
-            side.
+            Setting up a new business, training your staff, or brushing up your
+            own skills — tell us where you are and we'll point you to the right
+            setup, course or one-on-one session.
           </p>
         </Reveal>
         <Reveal delay={0.12} className="mt-9 flex flex-wrap items-center justify-center gap-3">

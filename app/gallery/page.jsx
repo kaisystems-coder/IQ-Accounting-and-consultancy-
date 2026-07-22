@@ -5,7 +5,7 @@ import ContactCTA from "@/components/home/ContactCTA";
 export const metadata = {
   title: "Portfolio | IQ Accounting and Consulting Limited",
   description:
-    "The work: real Trinidad & Tobago businesses IQ moved from boxes of paper to clean books, filed taxes and bank-ready statements.",
+    "The work: real Trinidad & Tobago businesses and professionals IQ set up with accounting systems, trained in-house, and taught through courses and one-on-one sessions.",
 };
 
 export default function GalleryPage() {
@@ -13,9 +13,9 @@ export default function GalleryPage() {
     <>
       <PageHero
         kicker="The work"
-        title="Businesses we took"
-        accent="from the box to the bank."
-        intro="We don't shoot glossy photos — our portfolio is the outcomes. Filter by service to see how IQ has helped businesses across Trinidad & Tobago."
+        title="People and businesses we"
+        accent="set up to stand on their own."
+        intro="We don't shoot glossy photos — our portfolio is the outcomes. Filter by the kind of work to see how IQ has set up systems, trained staff and taught professionals across Trinidad & Tobago."
       />
       <GalleryGrid />
       <ContactCTA />

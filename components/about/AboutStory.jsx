@@ -6,9 +6,9 @@ import { StaggerGroup, StaggerItem } from "@/components/StaggerGroup";
 
 const CREDENTIALS = [
   "ICATT-aligned practice",
-  "BIR & NIS compliant filings",
-  "Certified financial statements",
-  "Computerized accounting specialists",
+  "Accounting system setup & manuals",
+  "Hands-on staff training",
+  "Public e-courses, workshops & 1-on-1",
 ];
 
 export default function AboutStory() {
@@ -18,26 +18,27 @@ export default function AboutStory() {
         <Reveal>
           <Kicker>Our story</Kicker>
           <h2 className="mt-4 font-display text-[2rem] font-semibold leading-[1.1] tracking-tightest [text-wrap:balance] sm:text-[2.6rem]">
-            Started with a box of receipts.{" "}
+            We&apos;d rather teach you{" "}
             <span className="italic text-brand-blue">
-              Still solving that same problem.
+              than keep you dependent.
             </span>
           </h2>
           <div className="mt-6 space-y-4 text-[1.02rem] leading-relaxed text-brand-ink/70">
             <p>
-              Every small and medium business in Trinidad &amp; Tobago runs into
-              the same wall — heaps of paper, bills in boxes and plastic bags, and
-              no honest read on how much tax is owed. Owners are brilliant at their
-              trade and buried in admin they never signed up for.
+              Most new businesses in Trinidad &amp; Tobago start their accounting
+              on the back foot — no proper system, no documented way of doing
+              things, and no one on staff who's confident with the numbers.
             </p>
             <p>
-              IQ Accounting and Consulting was founded to fix exactly that. We take
-              the pile, put it into a proper system, file what needs filing, and
-              hand back numbers you can actually use to make decisions. Compliance
-              is the floor — clarity is the point.
+              IQ was built to change that. We set up the accounting system and
+              write the policies and procedures manuals, then train your own
+              people to run it — so the knowledge and the books stay inside your
+              business. Alongside that, we teach accounting &amp; taxation to
+              professionals through e-courses, workshops and private one-on-one
+              training.
             </p>
             <p className="font-medium text-brand-deep">
-              We&apos;ve been expecting you. Bring the box.
+              Our aim is simple: leave you able to do it yourself.
             </p>
           </div>
         </Reveal>
